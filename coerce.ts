@@ -14,3 +14,16 @@ z.coerce.number(); // Number(input)
 z.coerce.boolean(); // Boolean(input)
 z.coerce.bigint(); // BigInt(input)
 z.coerce.date(); // new Date(input)
+
+const bschema = z.coerce.boolean();
+
+console.log(bschema.parse("tuna")); // true
+console.log(bschema.parse("true")); // true
+console.log(bschema.parse("false")); // true
+console.log(bschema.parse(1)); // true
+console.log(bschema.parse([])); // true
+
+console.log(bschema.parse(0)); // false
+console.log(bschema.parse("")); // false
+console.log(bschema.parse(undefined)); // false
+console.log(bschema.parse(null)); // false
