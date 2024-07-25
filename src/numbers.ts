@@ -25,3 +25,7 @@ z.number().multipleOf(5); // Evenly divisible by 5. Alias .step(5)
 
 z.number().finite(); // value must be finite, not Infinity or -Infinity
 z.number().safe(); // value must be between Number.MIN_SAFE_INTEGER and Number.MAX_SAFE_INTEGER
+
+// custom error message
+z.number().lte(5, { message: "this👏is👏too👏big" });
+
